@@ -42,29 +42,7 @@ Vue.http.options.root="http://127.0.0.1:3000/"
 //修改请求头 POST
 //Vue.http.options.emulateJSON=true
 
-//创建过滤器...日期格式对象
-Vue.filter("dateFilter",function(val){
-  var date=new Date(val)
-  var y=date.getFullYear();
-  var m=date.getMonth()+1
-  var d=date.getDate()
-  m<10&&(m="0"+m);
-  d<10&&(d='0'+d);
-  return `${y}-${m}-${d}`
-})
-//3.创建过滤器
-Vue.filter("datetimeFilter",function(val){
-  var date=new Date(val)
-  var y=date.getFullYear();
-  var m=date.getMonth()+1
-  var d=date.getDate()
-  var h=date.getHours()
-  var mi=date.getMinutes()
-  var s=date.getSeconds()
-  m<10&&(m="0"+m);
-  d<10&&(d='0'+d);
-  return `${y}-${m}-${d} ${h}:${mi}:${s}`
-})
+
 //4.创建Vuex实例对象
   //4.1下载安装Vuex npm i vuex -D
   //4.2引入Vuex
@@ -82,6 +60,7 @@ var store=new Vuex.Store({
       state.count--
     }
   },
+
   getters:{
     optCount:function(state){
       return state.count

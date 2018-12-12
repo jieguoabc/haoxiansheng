@@ -4,32 +4,17 @@
     <!-- 容器显示不同组件 -->
     <router-view></router-view>
 	  <!-- 底部导航栏 -->
-    <nav class="mui-bar mui-bar-tab">
-		<router-link to="/home" class="mui-tab-item mui-active">
-			<span class="mui-icon mui-icon-home"></span>
-			<span class="mui-tab-label">首页</span>
-		</router-link>
-        <router-link to="/home/login" class="mui-tab-item" >
-			<span class="mui-icon mui-icon-bars"></span>
-			<span class="mui-tab-label">分类</span>
-		</router-link>
-		<router-link to="/shop" class="mui-tab-item" href="#tabbar-with-chat">
-			<span class="mui-icon mui-icon-email mui-icon-extra mui-icon-extra-cart"><span class="mui-badge">{{$store.getters.optCount}}</span></span>
-			<span class="mui-tab-label">购物车</span>
-		</router-link>
-		<a class="mui-tab-item" href="#tabbar-with-map">
-			<span class="mui-icon mui-icon-contact"></span>
-			<span class="mui-tab-label">我的</span>
-		</a>
-	</nav>
+
 
  </div>
 </template>
 
 <style>
    .app-container{
-
-     padding-bottom:50px;
+    max-width:500px;
+    min-width: 320px;
+    margin: 0 auto;
+    margin-bottom: 50px;
      overflow-x:hidden;
      background-color:#fff
    }

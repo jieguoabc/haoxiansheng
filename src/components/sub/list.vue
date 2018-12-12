@@ -1,6 +1,6 @@
 <template>
     <div class="app-goodslist ">
-        <div class="goods-item" v-for="item in list" :key="item.id" @click="getDetail(item.id)">
+        <div class="goods-item" v-for="item in list" :key="item.lid" @click="getDetail(item.lid)">
             <img :src="item.img_url" alt=""  >
             <p class="title">{{item.title}}</p>
             <p class="price">￥{{item.price}}</p> 
@@ -13,10 +13,10 @@ export default {
     data(){return{}},
     props:["list"],
     methods:{
-        getDetail(id){
+        getDetail(lid){
             //编程式跳转方式
             //this.$router.push("/home/shop?id=15")
-            this.$router.push("/home/goodsinfo/"+id)           
+            this.$router.push("/home/goodsinfo/"+lid)           
         }
     }
 }

@@ -7,7 +7,7 @@
         <!-- 轮播图2： -->
         <mt-swipe :auto="2000">
             <mt-swipe-item v-for="item in list" :key="item.id">
-                <img  :src="item.img_url" alt="">
+                <router-link :to="'/home/goodsinfo/'+item.id"><img  :src="item.img_url" alt=""></router-link>
             </mt-swipe-item>
         </mt-swipe>
         <div class="serve">
@@ -52,7 +52,25 @@
         </div>
         <!-- 商品列表-坚果 -->
         <list-box :list="nutList"></list-box>
-
+        <!-- 底部导航栏 -->
+        <nav class="mui-bar mui-bar-tab">
+            <router-link to="/home" class="mui-tab-item mui-active">
+                <span class="mui-icon mui-icon-home"></span>
+                <span class="mui-tab-label">首页</span>
+            </router-link>
+            <router-link to="/home/login" class="mui-tab-item" >
+                <span class="mui-icon mui-icon-bars"></span>
+                <span class="mui-tab-label">分类</span>
+            </router-link>
+            <router-link to="/shop" class="mui-tab-item" href="#tabbar-with-chat">
+                <span class="mui-icon mui-icon-email mui-icon-extra mui-icon-extra-cart"></span>
+                <span class="mui-tab-label">购物车</span>
+            </router-link>
+            <a class="mui-tab-item" href="#tabbar-with-map">
+                <span class="mui-icon mui-icon-contact"></span>
+                <span class="mui-tab-label">我的</span>
+            </a>
+	    </nav>
     </div>
 </template>
 <script>
@@ -95,9 +113,9 @@ export default {
 }
 </script>
 <style>
-    .app-homeContainer{
+    .app-homeContainer,.app-homeContainer .mui-bar{
         max-width:500px;
-        min-width: 320px;
+        min-width:320px;
         margin: 0 auto;
     }
     .app-homeContainer>div:first-child{
